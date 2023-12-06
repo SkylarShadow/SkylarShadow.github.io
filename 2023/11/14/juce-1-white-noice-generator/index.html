@@ -308,12 +308,12 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
 如何播放正弦波？</p>
 <p>稍微修改一下： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">MainComponent::getNextAudioBlock</span> <span class="hljs-params">(<span class="hljs-type">const</span> juce::AudioSourceChannelInfo&amp; bufferToFill)</span></span><br><span class="hljs-function"></span>&#123;<br><br>        <br>        <span class="hljs-keyword">auto</span> level = <span class="hljs-number">0.125f</span>;<br>        <span class="hljs-keyword">auto</span>* leftBuffer = bufferToFill.buffer-&gt;<span class="hljs-built_in">getWritePointer</span>(<span class="hljs-number">0</span>, bufferToFill.startSample);<br>        <span class="hljs-keyword">auto</span>* rightBuffer = bufferToFill.buffer-&gt;<span class="hljs-built_in">getWritePointer</span>(<span class="hljs-number">1</span>, bufferToFill.startSample);<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> sample = <span class="hljs-number">0</span>; sample &lt; bufferToFill.numSamples; ++sample)<br>        &#123;<br>            <span class="hljs-keyword">auto</span> currentSample = (<span class="hljs-type">float</span>)std::<span class="hljs-built_in">sin</span>(currentAngle);<br>            currentAngle += angleDelta;<br>            leftBuffer[sample] = currentSample * level;<br>            rightBuffer[sample] = currentSample * level;<br>        &#125;<br>&#125;<br></code></pre></td></tr></table></figure> 同时在头文件添加： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span>  currentAngle = <span class="hljs-number">0.0</span>, angleDelta = <span class="hljs-number">31.4</span>;<br></code></pre></td></tr></table></figure></p>
 <!--音频嵌入：   
-        <div id="aplayer-JefGSzTa" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-pwTeayIX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-JefGSzTa"),
+            element: document.getElementById("aplayer-pwTeayIX"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -734,20 +734,5 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

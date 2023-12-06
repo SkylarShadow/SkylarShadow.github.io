@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
+  <link rel="icon" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="好的我回来了。 参考链接：tutorial_simple_synth_noise,官方的教程已经写的很好了，我只是为了记录一下 首先按照官方教程创建一个音频应用，选择projucer application下的audio，创建项目模板 打开项目，先看到MainComponent.h，发现我们的类继承于juce::AudioAppComponent。 了解一下juce音频应用的生命周期(li">
 <meta property="og:type" content="article">
 <meta property="og:title" content="juce实战(1)：制作一个白噪声合成器">
-<meta property="og:url" content="https://skylarshadow.github.io/2023/11/14/juce-1-white-noice-generator/index.html">
+<meta property="og:url" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/11/14/juce-1-white-noice-generator/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
 <meta property="og:description" content="好的我回来了。 参考链接：tutorial_simple_synth_noise,官方的教程已经写的很好了，我只是为了记录一下 首先按照官方教程创建一个音频应用，选择projucer application下的audio，创建项目模板 打开项目，先看到MainComponent.h，发现我们的类继承于juce::AudioAppComponent。 了解一下juce音频应用的生命周期(li">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylarshadow.github.io/2023/11/14/juce-1-white-noice-generator/lifecycle.png">
+<meta property="og:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/11/14/juce-1-white-noice-generator/lifecycle.png">
 <meta property="article:published_time" content="2023-11-14T08:37:39.000Z">
 <meta property="article:modified_time" content="2023-11-29T09:18:13.758Z">
 <meta property="article:author" content="SKYlarS">
 <meta property="article:tag" content="juce">
 <meta property="article:tag" content="audio">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://skylarshadow.github.io/2023/11/14/juce-1-white-noice-generator/lifecycle.png">
+<meta name="twitter:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/11/14/juce-1-white-noice-generator/lifecycle.png">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"skylarshadow.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/SkylarShadow/SkylarShadow.github.io-/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/SkylarShadow/SkylarShadow.github.io-/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/utils.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/color-schema.js" ></script>
   
 
 
@@ -89,8 +89,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
-<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\SkylarShadow\SkylarShadow.github.io-\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\SkylarShadow\SkylarShadow.github.io-\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
 </head>
 
 
@@ -103,7 +103,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/SkylarShadow/SkylarShadow.github.io-/">
       <strong>skylars&#39;s domain</strong>
     </a>
 
@@ -122,7 +122,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -134,7 +134,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -146,7 +146,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -158,7 +158,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -170,7 +170,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -200,7 +200,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/SkylarShadow/SkylarShadow.github.io-/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -286,7 +286,7 @@
 <p>首先按照官方教程创建一个音频应用，选择projucer
 application下的audio，创建项目模板</p>
 <p>打开项目，先看到MainComponent.h，发现我们的类继承于juce::AudioAppComponent。</p>
-<p>了解一下juce音频应用的生命周期(licecycle): <img src="lifecycle.png" srcset="/img/loading.gif" lazyload alt="生命周期"></p>
+<p>了解一下juce音频应用的生命周期(licecycle): <img src="lifecycle.png" srcset="/SkylarShadow/SkylarShadow.github.io-/img/loading.gif" lazyload alt="生命周期"></p>
 <ol type="1">
 <li><p>prepareToPlay():在音频处理前调用；</p></li>
 <li><p>releaseResources():在音频处理完成时调用；</p></li>
@@ -308,12 +308,12 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
 如何播放正弦波？</p>
 <p>稍微修改一下： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">MainComponent::getNextAudioBlock</span> <span class="hljs-params">(<span class="hljs-type">const</span> juce::AudioSourceChannelInfo&amp; bufferToFill)</span></span><br><span class="hljs-function"></span>&#123;<br><br>        <br>        <span class="hljs-keyword">auto</span> level = <span class="hljs-number">0.125f</span>;<br>        <span class="hljs-keyword">auto</span>* leftBuffer = bufferToFill.buffer-&gt;<span class="hljs-built_in">getWritePointer</span>(<span class="hljs-number">0</span>, bufferToFill.startSample);<br>        <span class="hljs-keyword">auto</span>* rightBuffer = bufferToFill.buffer-&gt;<span class="hljs-built_in">getWritePointer</span>(<span class="hljs-number">1</span>, bufferToFill.startSample);<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> sample = <span class="hljs-number">0</span>; sample &lt; bufferToFill.numSamples; ++sample)<br>        &#123;<br>            <span class="hljs-keyword">auto</span> currentSample = (<span class="hljs-type">float</span>)std::<span class="hljs-built_in">sin</span>(currentAngle);<br>            currentAngle += angleDelta;<br>            leftBuffer[sample] = currentSample * level;<br>            rightBuffer[sample] = currentSample * level;<br>        &#125;<br>&#125;<br></code></pre></td></tr></table></figure> 同时在头文件添加： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span>  currentAngle = <span class="hljs-number">0.0</span>, angleDelta = <span class="hljs-number">31.4</span>;<br></code></pre></td></tr></table></figure></p>
 <!--音频嵌入：   
-        <div id="aplayer-mPKAagom" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-Zrcxlwlw" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-mPKAagom"),
+            element: document.getElementById("aplayer-Zrcxlwlw"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -329,7 +329,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
           window.aplayers.push(ap);
         </script>
 <p>--&gt;</p>
---><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+--><link rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/spoiler.css" type="text/css"><script src="/SkylarShadow/SkylarShadow.github.io-/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>
             
@@ -347,12 +347,12 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
     
       <span class="category-chain">
         
-  <a href="/categories/program/" class="category-chain-item">program</a>
+  <a href="/SkylarShadow/SkylarShadow.github.io-/categories/program/" class="category-chain-item">program</a>
   
   
     <span>></span>
     
-  <a href="/categories/program/audio/" class="category-chain-item">audio</a>
+  <a href="/SkylarShadow/SkylarShadow.github.io-/categories/program/audio/" class="category-chain-item">audio</a>
   
   
 
@@ -369,9 +369,9 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/juce/" class="print-no-link">#juce</a>
+        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/juce/" class="print-no-link">#juce</a>
       
-        <a href="/tags/audio/" class="print-no-link">#audio</a>
+        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/audio/" class="print-no-link">#audio</a>
       
     </div>
   
@@ -384,7 +384,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
   <div class="license-box my-3">
     <div class="license-title">
       <div>juce实战(1)：制作一个白噪声合成器</div>
-      <div>https://skylarshadow.github.io/2023/11/14/juce-1-white-noice-generator/</div>
+      <div>https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/11/14/juce-1-white-noice-generator/</div>
     </div>
     <div class="license-meta">
       
@@ -428,7 +428,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/29/juce-draw-audio-waveforms/" title="juce实战(2)：音频波形绘图">
+                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/11/29/juce-draw-audio-waveforms/" title="juce实战(2)：音频波形绘图">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">juce实战(2)：音频波形绘图</span>
                         <span class="visible-mobile">上一篇</span>
@@ -438,7 +438,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/15/juce-setup-plugin-debug/" title="如何用juce内置的调试器调试插件？">
+                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/10/15/juce-setup-plugin-debug/" title="如何用juce内置的调试器调试插件？">
                         <span class="hidden-mobile">如何用juce内置的调试器调试插件？</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -459,8 +459,8 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://skylarshadow.github.io/2023/11/14/juce-1-white-noice-generator/';
-          this.page.identifier = '/2023/11/14/juce-1-white-noice-generator/';
+          this.page.url = 'https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/11/14/juce-1-white-noice-generator/';
+          this.page.identifier = '/SkylarShadow/SkylarShadow.github.io-/2023/11/14/juce-1-white-noice-generator/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
@@ -596,8 +596,8 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/events.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -619,7 +619,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/SkylarShadow/SkylarShadow.github.io-/js/img-lazyload.js" ></script>
   
 
 
@@ -718,7 +718,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/local-search.js" ></script>
 
 
 
@@ -726,7 +726,7 @@ bufferToFill.startSample);中的<a target="_blank" rel="noopener" href="https://
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/boot.js" ></script>
 
 
   

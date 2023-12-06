@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
+  <link rel="icon" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是教程，所以仅供参考； 4.1.离散傅里叶变换（DFT） 4.2.如何从多个角度理解dft？ （以后补充详细内容，这部分先略过） 1.公式推导 2.正交分解 3.矩阵 离散傅里叶正变换：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用数字信号处理——笔记与基于C++与python的实验(4)">
-<meta property="og:url" content="https://skylarshadow.github.io/2023/08/25/dsp-guide4/index.html">
+<meta property="og:url" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/25/dsp-guide4/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
 <meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是教程，所以仅供参考； 4.1.离散傅里叶变换（DFT） 4.2.如何从多个角度理解dft？ （以后补充详细内容，这部分先略过） 1.公式推导 2.正交分解 3.矩阵 离散傅里叶正变换：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylarshadow.github.io/2023/08/25/dsp-guide4/dft1.png">
+<meta property="og:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/25/dsp-guide4/dft1.png">
 <meta property="article:published_time" content="2023-08-25T04:07:13.000Z">
 <meta property="article:modified_time" content="2023-10-05T07:30:37.314Z">
 <meta property="article:author" content="SKYlarS">
 <meta property="article:tag" content="dsp">
 <meta property="article:tag" content="数字信号处理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://skylarshadow.github.io/2023/08/25/dsp-guide4/dft1.png">
+<meta name="twitter:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/25/dsp-guide4/dft1.png">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"skylarshadow.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/SkylarShadow/SkylarShadow.github.io-/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/SkylarShadow/SkylarShadow.github.io-/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/utils.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/color-schema.js" ></script>
   
 
 
@@ -101,7 +101,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/SkylarShadow/SkylarShadow.github.io-/">
       <strong>skylars&#39;s domain</strong>
     </a>
 
@@ -120,7 +120,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -198,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/SkylarShadow/SkylarShadow.github.io-/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -299,9 +299,9 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
 <p>实现代码： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp">vector&lt;complex&lt;<span class="hljs-type">double</span>&gt;&gt; <span class="hljs-built_in">DFT</span>(vector&lt;complex&lt;<span class="hljs-type">double</span>&gt;&gt; arr,<span class="hljs-type">int</span> N)&#123;<br>    vector&lt;complex&lt;<span class="hljs-type">double</span>&gt;&gt; <span class="hljs-built_in">ret</span>(N);<br>    complex&lt;<span class="hljs-type">double</span>&gt; temp&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; N;k++)&#123;<br>        ret[k].<span class="hljs-built_in">imag</span>(<span class="hljs-number">0</span>);<br>        ret[k].<span class="hljs-built_in">real</span>(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N;i++)&#123;<br>            temp.<span class="hljs-built_in">real</span>(<span class="hljs-built_in">cos</span>(<span class="hljs-number">2</span>*M_PI*k*i/N));<br>            temp.<span class="hljs-built_in">imag</span>(-<span class="hljs-built_in">sin</span>(<span class="hljs-number">2</span>*M_PI*k*i/N));<br>            ret[k] += arr[i] * temp;<br>            <span class="hljs-comment">// ret[k].real(ret[k].real() + arr[i].real() * temp.real()-arr[i].imag()*temp.imag());</span><br>            <span class="hljs-comment">// ret[k].imag(ret[k].imag() + arr[i].real() * temp.imag()+arr[i].imag()*temp.real());</span><br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br><br>vector&lt;complex&lt;<span class="hljs-type">double</span>&gt;&gt; <span class="hljs-built_in">IDFT</span>(vector&lt;complex&lt;<span class="hljs-type">double</span>&gt;&gt; arr,<span class="hljs-type">int</span> N)&#123;<br>    vector&lt;complex&lt;<span class="hljs-type">double</span>&gt;&gt; <span class="hljs-built_in">ret</span>(N);<br>    complex&lt;<span class="hljs-type">double</span>&gt; temp&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; N;k++)&#123;<br>        ret[k].<span class="hljs-built_in">imag</span>(<span class="hljs-number">0</span>);<br>        ret[k].<span class="hljs-built_in">real</span>(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; N;i++)&#123;<br>            temp.<span class="hljs-built_in">real</span>(<span class="hljs-built_in">cos</span>(<span class="hljs-number">2</span>*M_PI*k*i/N));<br>            temp.<span class="hljs-built_in">imag</span>(<span class="hljs-built_in">sin</span>(<span class="hljs-number">2</span>*M_PI*k*i/N));<br>            ret[k] += arr[i] * temp;<br>        &#125;<br>        ret[k].<span class="hljs-built_in">real</span>(ret[k].<span class="hljs-built_in">real</span>()/N);<br>        ret[k].<span class="hljs-built_in">imag</span>(ret[k].<span class="hljs-built_in">imag</span>()/N);<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 <del>(其实我感觉从代码上很容易看到dft的本质:信号对三角函数的正交分解</del></p>
 <p>结果：</p>
-<p><img src="dft1.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="dft1.png" srcset="/SkylarShadow/SkylarShadow.github.io-/img/loading.gif" lazyload></p>
 <p>idft后的数值和初始数组一致（复数部分有误差）</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<link rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/spoiler.css" type="text/css"><script src="/SkylarShadow/SkylarShadow.github.io-/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>
             
@@ -313,9 +313,9 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/dsp/" class="print-no-link">#dsp</a>
+        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/dsp/" class="print-no-link">#dsp</a>
       
-        <a href="/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="print-no-link">#数字信号处理</a>
+        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="print-no-link">#数字信号处理</a>
       
     </div>
   
@@ -328,7 +328,7 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
   <div class="license-box my-3">
     <div class="license-title">
       <div>实用数字信号处理——笔记与基于C++与python的实验(4)</div>
-      <div>https://skylarshadow.github.io/2023/08/25/dsp-guide4/</div>
+      <div>https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/25/dsp-guide4/</div>
     </div>
     <div class="license-meta">
       
@@ -372,7 +372,7 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/28/dsp-guide5/" title="实用数字信号处理——笔记与基于C++与python的实验(5)">
+                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/08/28/dsp-guide5/" title="实用数字信号处理——笔记与基于C++与python的实验(5)">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">实用数字信号处理——笔记与基于C++与python的实验(5)</span>
                         <span class="visible-mobile">上一篇</span>
@@ -382,7 +382,7 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/20/dsp-guide3/" title="实用数字信号处理——笔记与基于C++与python的实验(3)">
+                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/08/20/dsp-guide3/" title="实用数字信号处理——笔记与基于C++与python的实验(3)">
                         <span class="hidden-mobile">实用数字信号处理——笔记与基于C++与python的实验(3)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -403,8 +403,8 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://skylarshadow.github.io/2023/08/25/dsp-guide4/';
-          this.page.identifier = '/2023/08/25/dsp-guide4/';
+          this.page.url = 'https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/25/dsp-guide4/';
+          this.page.identifier = '/SkylarShadow/SkylarShadow.github.io-/2023/08/25/dsp-guide4/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
@@ -540,8 +540,8 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/events.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -563,7 +563,7 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/SkylarShadow/SkylarShadow.github.io-/js/img-lazyload.js" ></script>
   
 
 
@@ -662,7 +662,7 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/local-search.js" ></script>
 
 
 
@@ -670,7 +670,7 @@ X[k]=\frac{1}{N}\sum{^{N-1}_{n=0}}x[n] (\cos{(\frac{ {2\pi kn} }{N})} +i\sin{(\f
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/boot.js" ></script>
 
 
   

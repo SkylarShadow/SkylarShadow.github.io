@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
+  <link rel="icon" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识； 本文是笔记而不是教程，所以仅供参考； 傅里叶变换的性质  齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对 可加性：直角坐标系中频谱相加,即实部与实部相">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用数字信号处理——笔记与基于C++与python的实验(6)">
-<meta property="og:url" content="https://skylarshadow.github.io/2023/08/29/dsp-guide6/index.html">
+<meta property="og:url" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/29/dsp-guide6/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
 <meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识； 本文是笔记而不是教程，所以仅供参考； 傅里叶变换的性质  齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对 可加性：直角坐标系中频谱相加,即实部与实部相">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylarshadow.github.io/2023/08/29/dsp-guide6/properties.png">
+<meta property="og:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/29/dsp-guide6/properties.png">
 <meta property="article:published_time" content="2023-08-29T11:16:33.000Z">
 <meta property="article:modified_time" content="2023-10-04T17:49:37.337Z">
 <meta property="article:author" content="SKYlarS">
 <meta property="article:tag" content="dsp">
 <meta property="article:tag" content="数字信号处理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://skylarshadow.github.io/2023/08/29/dsp-guide6/properties.png">
+<meta name="twitter:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/29/dsp-guide6/properties.png">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"skylarshadow.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"github.com","root":"/SkylarShadow/SkylarShadow.github.io-/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/SkylarShadow/SkylarShadow.github.io-/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/utils.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/color-schema.js" ></script>
   
 
 
@@ -101,7 +101,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/SkylarShadow/SkylarShadow.github.io-/">
       <strong>skylars&#39;s domain</strong>
     </a>
 
@@ -120,7 +120,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -198,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/SkylarShadow/SkylarShadow.github.io-/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -296,9 +296,9 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br>x1 = <span class="hljs-built_in">create_sin_arr</span>(<span class="hljs-number">1</span>,<span class="hljs-number">220</span>, <span class="hljs-number">0</span>,<span class="hljs-number">22050</span>,<span class="hljs-number">1000</span>);<br>x2 = <span class="hljs-built_in">create_sin_arr</span>(<span class="hljs-number">1</span>,<span class="hljs-number">330</span>, <span class="hljs-number">0</span>,<span class="hljs-number">22050</span>,<span class="hljs-number">1000</span>);<br>x3 = x1 + x2;<br><span class="hljs-built_in">vector_show</span>(x3);<br><span class="hljs-built_in">vector_complex_real_show</span>(<span class="hljs-built_in">IDFT</span>(<span class="hljs-built_in">DFT</span>(<span class="hljs-built_in">real_to_complex</span>(x1) + <span class="hljs-built_in">real_to_complex</span>(x2),<span class="hljs-number">4410</span>),<span class="hljs-number">4410</span>));<br><br></code></pre></td></tr></table></figure>
 <p>第一组数据，将x1和x2数据直接相加；第二组数据，将x1和x2分别做dft再相加，然后再做idft(为了方便计算，第二组数据只取了1/5)</p>
 <p>将计算后的结果用python绘图 <!-- ![](/image/properties.png) --></p>
-<p><img src="properties.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="properties.png" srcset="/SkylarShadow/SkylarShadow.github.io-/img/loading.gif" lazyload></p>
 <p>发现两组数据形成的曲线重叠在一起，说明数据相同，故得证。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<link rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/spoiler.css" type="text/css"><script src="/SkylarShadow/SkylarShadow.github.io-/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>
             
@@ -310,9 +310,9 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/dsp/" class="print-no-link">#dsp</a>
+        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/dsp/" class="print-no-link">#dsp</a>
       
-        <a href="/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="print-no-link">#数字信号处理</a>
+        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="print-no-link">#数字信号处理</a>
       
     </div>
   
@@ -325,7 +325,7 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
   <div class="license-box my-3">
     <div class="license-title">
       <div>实用数字信号处理——笔记与基于C++与python的实验(6)</div>
-      <div>https://skylarshadow.github.io/2023/08/29/dsp-guide6/</div>
+      <div>https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/29/dsp-guide6/</div>
     </div>
     <div class="license-meta">
       
@@ -369,7 +369,7 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/10/15/juce-setup-plugin-debug/" title="如何用juce内置的调试器调试插件？">
+                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/10/15/juce-setup-plugin-debug/" title="如何用juce内置的调试器调试插件？">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">如何用juce内置的调试器调试插件？</span>
                         <span class="visible-mobile">上一篇</span>
@@ -379,7 +379,7 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/28/dsp-guide5/" title="实用数字信号处理——笔记与基于C++与python的实验(5)">
+                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/08/28/dsp-guide5/" title="实用数字信号处理——笔记与基于C++与python的实验(5)">
                         <span class="hidden-mobile">实用数字信号处理——笔记与基于C++与python的实验(5)</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -400,8 +400,8 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://skylarshadow.github.io/2023/08/29/dsp-guide6/';
-          this.page.identifier = '/2023/08/29/dsp-guide6/';
+          this.page.url = 'https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/08/29/dsp-guide6/';
+          this.page.identifier = '/SkylarShadow/SkylarShadow.github.io-/2023/08/29/dsp-guide6/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
@@ -537,8 +537,8 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/events.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -560,7 +560,7 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/SkylarShadow/SkylarShadow.github.io-/js/img-lazyload.js" ></script>
   
 
 
@@ -659,7 +659,7 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/local-search.js" ></script>
 
 
 
@@ -667,7 +667,7 @@ x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
+<script  src="/SkylarShadow/SkylarShadow.github.io-/js/boot.js" ></script>
 
 
   

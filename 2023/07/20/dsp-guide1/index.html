@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
-  <link rel="icon" href="/SkylarShadow/SkylarShadow.github.io-/img/fluid.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -19,18 +19,18 @@
     <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多； 本文是笔记而不是相对准确的教程，所以仅供参考； 1.1.正弦波数据的生成 正弦波的公式:  y&#x3D;Asin⁡(ωΔt+ψ)&#x3D;Asin(2πfΔt+ψ)y&#x3D;A \sin ( \omega _\Delta t + \psi )&#x3D;Asin( 2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用数字信号处理——笔记与基于C++与python的实验(1)">
-<meta property="og:url" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/07/20/dsp-guide1/index.html">
+<meta property="og:url" content="https://skylarshadow.github.io/2023/07/20/dsp-guide1/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
 <meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多； 本文是笔记而不是相对准确的教程，所以仅供参考； 1.1.正弦波数据的生成 正弦波的公式:  y&#x3D;Asin⁡(ωΔt+ψ)&#x3D;Asin(2πfΔt+ψ)y&#x3D;A \sin ( \omega _\Delta t + \psi )&#x3D;Asin( 2">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/07/20/dsp-guide1/csin.png">
+<meta property="og:image" content="https://skylarshadow.github.io/2023/07/20/dsp-guide1/csin.png">
 <meta property="article:published_time" content="2023-07-20T11:10:27.000Z">
 <meta property="article:modified_time" content="2023-10-05T07:34:40.539Z">
 <meta property="article:author" content="SKYlarS">
 <meta property="article:tag" content="dsp">
 <meta property="article:tag" content="数字信号处理">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/07/20/dsp-guide1/csin.png">
+<meta name="twitter:image" content="https://skylarshadow.github.io/2023/07/20/dsp-guide1/csin.png">
   
   
   
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"github.com","root":"/SkylarShadow/SkylarShadow.github.io-/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/SkylarShadow/SkylarShadow.github.io-/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"skylarshadow.github.io","root":"/","version":"1.9.5-a","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/utils.js" ></script>
-  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
   
 
 
@@ -101,7 +101,7 @@
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/SkylarShadow/SkylarShadow.github.io-/">
+    <a class="navbar-brand" href="/">
       <strong>skylars&#39;s domain</strong>
     </a>
 
@@ -120,7 +120,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -132,7 +132,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 <span>归档</span>
               </a>
@@ -144,7 +144,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -156,7 +156,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -168,7 +168,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/SkylarShadow/SkylarShadow.github.io-/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>关于</span>
               </a>
@@ -198,7 +198,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/SkylarShadow/SkylarShadow.github.io-/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -298,13 +298,13 @@ for (int i = 0; i &lt; sample_num;i++)&#123;
     double t = i * delta_t;
     sin_arr[i] = amp * sin(2 * M_PI * freq *t + phase*M_PI/180);
 &#125;</code></pre>
-<p>用python进行绘图： <img src="csin.png" srcset="/SkylarShadow/SkylarShadow.github.io-/img/loading.gif" lazyload>
+<p>用python进行绘图： <img src="csin.png" srcset="/img/loading.gif" lazyload>
 <!-- ![](csin.png) --> 参考代码：
 https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
 <h2 id="数字信号处理的软件部分">1.2 数字信号处理的软件部分</h2>
 <p>1.整数 2.浮点数 3.执行程序速度（算法速度）
 (计算机专业的知识略过......)</p>
-<link rel="stylesheet" href="/SkylarShadow/SkylarShadow.github.io-/css/spoiler.css" type="text/css"><script src="/SkylarShadow/SkylarShadow.github.io-/js/spoiler.js" type="text/javascript" async></script>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>
             
@@ -316,9 +316,9 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/dsp/" class="print-no-link">#dsp</a>
+        <a href="/tags/dsp/" class="print-no-link">#dsp</a>
       
-        <a href="/SkylarShadow/SkylarShadow.github.io-/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="print-no-link">#数字信号处理</a>
+        <a href="/tags/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="print-no-link">#数字信号处理</a>
       
     </div>
   
@@ -331,7 +331,7 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
   <div class="license-box my-3">
     <div class="license-title">
       <div>实用数字信号处理——笔记与基于C++与python的实验(1)</div>
-      <div>https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/07/20/dsp-guide1/</div>
+      <div>https://skylarshadow.github.io/2023/07/20/dsp-guide1/</div>
     </div>
     <div class="license-meta">
       
@@ -375,7 +375,7 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/SkylarShadow/SkylarShadow.github.io-/2023/08/19/dsp-guide2/" title="实用数字信号处理——笔记与基于C++与python的实验(2)">
+                      <a href="/2023/08/19/dsp-guide2/" title="实用数字信号处理——笔记与基于C++与python的实验(2)">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">实用数字信号处理——笔记与基于C++与python的实验(2)</span>
                         <span class="visible-mobile">上一篇</span>
@@ -400,8 +400,8 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'https://github.com/SkylarShadow/SkylarShadow.github.io-/2023/07/20/dsp-guide1/';
-          this.page.identifier = '/SkylarShadow/SkylarShadow.github.io-/2023/07/20/dsp-guide1/';
+          this.page.url = 'https://skylarshadow.github.io/2023/07/20/dsp-guide1/';
+          this.page.identifier = '/2023/07/20/dsp-guide1/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
@@ -537,8 +537,8 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
 
 <script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/SkylarShadow/SkylarShadow.github.io-/js/events.js" ></script>
-<script  src="/SkylarShadow/SkylarShadow.github.io-/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -560,7 +560,7 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
 
 
   
-    <script  src="/SkylarShadow/SkylarShadow.github.io-/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -659,7 +659,7 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/SkylarShadow/SkylarShadow.github.io-/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
@@ -667,7 +667,7 @@ https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/SkylarShadow/SkylarShadow.github.io-/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
   

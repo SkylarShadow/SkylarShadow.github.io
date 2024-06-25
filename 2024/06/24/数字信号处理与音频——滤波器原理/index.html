@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/1.png">
 <meta property="og:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/2.png">
 <meta property="article:published_time" content="2024-06-24T08:09:18.000Z">
-<meta property="article:modified_time" content="2024-06-25T03:27:04.784Z">
+<meta property="article:modified_time" content="2024-06-25T03:33:24.681Z">
 <meta property="article:author" content="SKYlarS">
 <meta property="article:tag" content="dsp">
 <meta property="article:tag" content="数字信号处理">
@@ -241,7 +241,7 @@
         
         
         
-          22 分钟
+          21 分钟
         
       </span>
     
@@ -286,7 +286,7 @@
                 <p>（不知道为什么有高温假放，第一次感觉这个世界有一分美好。じあ,就随便写点吧）
 读本文可能需要一点信号与系统的基础和编程基础。</p>
 <h2 id="滤波在计算机中如何实现">滤波在计算机中如何实现？</h2>
-<p>省流版： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> cutoff_Freq=<span class="hljs-number">432</span>; <span class="hljs-comment">//截止频率</span><br><br><span class="hljs-type">double</span> sampleRate=<span class="hljs-number">44100.0</span>; <span class="hljs-comment">//采样率</span><br><br><span class="hljs-type">double</span> a=cutoff_Freq/sampleRate; <span class="hljs-comment">//滤波系数</span><br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;samples.<span class="hljs-built_in">length</span>();i++)&#123;<br><br>    samples[i]=a*samples[i]+(<span class="hljs-number">1.0</span>-a)*samples[i<span class="hljs-number">-1</span>];<br><br>&#125;<br></code></pre></td></tr></table></figure> 公式为：<span class="math display">\[
+<p>省流版： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> cutoff_Freq=<span class="hljs-number">432</span>; <span class="hljs-comment">//截止频率</span><br><br><span class="hljs-type">double</span> sampleRate=<span class="hljs-number">44100.0</span>; <span class="hljs-comment">//采样率</span><br><br><span class="hljs-type">double</span> a=cutoff_Freq/sampleRate; <span class="hljs-comment">//滤波系数</span><br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;samples.<span class="hljs-built_in">length</span>();i++)&#123;<br><br>    samples[i]=a*samples[i]+(<span class="hljs-number">1.0</span>-a)*samples[i<span class="hljs-number">-1</span>];<br><br>&#125;<br></code></pre></td></tr></table></figure> 公式为： <span class="math display">\[
 x[i]=ax[i]+(1-a)x[i-1] \]</span></p>
 <p>这个公式怎么来的，a又是什么，下文会提到。</p>
 <h2 id="为什么不直接在频域做处理">为什么不直接在频域做处理？</h2>
@@ -301,18 +301,17 @@ http://lushprojects.com/circuitjs/circuitjs.html 选择RC电路：</p>
 Spectrum，当然如果有其他想观测的信息也可以勾上；</p>
 <p>现在可以对比一下，去掉电阻后的输出有什么不同（重点关注85.2Hz后的频谱，因为计算得出的截止频率为85.2Hz,这里请先关注现象，截止频率计算什么的将在后面提到）</p>
 <p>这个电路就是RC滤波电路，电感以磁能存储电能，在电流变化时产生反向电压，阻止电流突变；电容存储电荷，当电压变化时电荷会流出或流入，减缓电压变化。这两种对交流电的阻碍都叫做阻抗。</p>
-<p>电容的阻抗的公式为$ Z_C= $</p>
-<p>电压的阻抗的公式为$ Z_R=R $</p>
-<p>根据KVL基尔霍夫电压定律：$V_{out} = V_c = V_{in} - V_R $</p>
+<p>电容的阻抗的公式为 $ Z_C= $</p>
+<p>电压的阻抗的公式为 $ Z_R=R $</p>
+<p>根据KVL基尔霍夫电压定律：$ V_{out} = V_c = V_{in} - V_R $</p>
 <p>因为输入的是交流电，将其用微分方程表示 <span class="math display">\[
 RC \frac{dv_c(t)}{dt} = v_{in}(t) - v_c(t) \]</span>
 (这里的公式大概能懂吧，有点像电路中电流的等式，可以结合高中学过的公式：
-$C = <span class="math inline">\(,\)</span> I = =
+$ C = <span class="math inline">\(,\)</span> I = =
 $，也可结合信号与系统——奥本海姆书P153来看)</p>
 <p>令输入电压$ V_{in} =e^{jwt} <span class="math inline">\(，输出电压一定为：\)</span> V_{in} =H(jw)e^{jwt}
-<span class="math inline">\(。 其中\)</span> H(jw) <span class="math inline">\(是 __频率响应__ ，即\)</span> H(jw) = $<br>
-(为什么有一个$ e^{jwt} <span class="math inline">\(？因为对\)</span>
-e^{jwt} <span class="math inline">\(进行求导，求导后的表达式仍有\)</span> e^{jwt}
+<span class="math inline">\(。 其中\)</span> H(jw) $是
+<strong>频率响应</strong> ，即 $ H(jw) = $ (为什么有一个 $ e^{jwt} <span class="math inline">\(？因为对\)</span> e^{jwt} <span class="math inline">\(进行求导，求导后的表达式仍有\)</span> e^{jwt}
 $，利用复指数的性质能简化运算和方便研究系统特性)</p>
 <p>得： $ RC H(jw)e^{jwt} = e^{jwt} - H(jw)e^{jwt} $</p>
 <p>可直接得出： $ H(jw)e^{jwt} = e^{jwt} $</p>

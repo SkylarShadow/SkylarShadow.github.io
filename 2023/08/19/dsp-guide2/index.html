@@ -16,12 +16,12 @@
   <meta name="author" content="SKYlarS">
   <meta name="keywords" content="">
   
-    <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于de3&#x2F;计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是相对准确的教程，所以仅供参考；  2.1.均值——方差模型与直方图 这部分略了，可以参考代码。  2.2.采样定理 The sampling theorem indicates that a">
+    <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于de3&#x2F;计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是相对准确的教程，所以仅供参考； 2.1.均值——方差模型与直方图 这部分略了，可以参考代码。 2.2.采样定理 The sampling theorem indicates th">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用数字信号处理——笔记与基于C++与python的实验(2)">
 <meta property="og:url" content="https://skylarshadow.github.io/2023/08/19/dsp-guide2/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
-<meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于de3&#x2F;计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是相对准确的教程，所以仅供参考；  2.1.均值——方差模型与直方图 这部分略了，可以参考代码。  2.2.采样定理 The sampling theorem indicates that a">
+<meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于de3&#x2F;计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是相对准确的教程，所以仅供参考； 2.1.均值——方差模型与直方图 这部分略了，可以参考代码。 2.2.采样定理 The sampling theorem indicates th">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/08/19/dsp-guide2/cydl1.png">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/08/19/dsp-guide2/cydl2.png">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          645 字
+          644 字
         
       </span>
     
@@ -285,27 +285,26 @@
             
               <div class="markdown-body">
                 
-                <p>参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith<br>
+                <p>参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith
 本笔记的内容倾向于de3/计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识；<br>
 本文是笔记而不是相对准确的教程，所以仅供参考；</p>
-<h2 id="21均值方差模型与直方图"><a class="markdownIt-Anchor" href="#21均值方差模型与直方图"></a> 2.1.均值——方差模型与直方图</h2>
+<h2 id="均值方差模型与直方图">2.1.均值——方差模型与直方图</h2>
 <p>这部分略了，可以参考代码。</p>
-<h2 id="22采样定理"><a class="markdownIt-Anchor" href="#22采样定理"></a> 2.2.采样定理</h2>
-<p><strong>The sampling theorem indicates that a continuous signal can be properly sampled, only if it does not contain frequency components above one-half of the sampling rate.</strong></p>
-<p>当连续信号不包含高于采样率的<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>频率分量时，才能正确采样，采样后的信号才完整保留了原始信号的信息。</p>
-<p><img src="cydl1.png" srcset="/img/loading.gif" lazyload alt></p>
-<p>用python绘图，当采样率是频率的20倍时，sin散点数据在一个采样率远大于信号频率的正弦波中如下图所示：<br>
-<img src="cydl2.png" srcset="/img/loading.gif" lazyload alt></p>
-<p>当采样率分别是频率的10倍和20倍时   ：<br>
-<img src="cydl3.png" srcset="/img/loading.gif" lazyload alt>  <img src="cydl4.png" srcset="/img/loading.gif" lazyload alt></p>
-<p>当采样率分别是频率的2倍时（奈奎斯特速率）：<br>
-<img src="cydl5.png" srcset="/img/loading.gif" lazyload alt><br>
+<h2 id="采样定理">2.2.采样定理</h2>
+<p><strong>The sampling theorem indicates that a continuous signal can
+be properly sampled, only if it does not contain frequency components
+above one-half of the sampling rate.</strong></p>
+<p>当连续信号不包含高于采样率的<span class="math inline">\(\frac{1}{2}\)</span>频率分量时，才能正确采样，采样后的信号才完整保留了原始信号的信息。</p>
+<p><img src="cydl1.png" srcset="/img/loading.gif" lazyload></p>
+<p>用python绘图，当采样率是频率的20倍时，sin散点数据在一个采样率远大于信号频率的正弦波中如下图所示：
+<img src="cydl2.png" srcset="/img/loading.gif" lazyload></p>
+<p>当采样率分别是频率的10倍和20倍时 ： <img src="cydl3.png" srcset="/img/loading.gif" lazyload> <img src="cydl4.png" srcset="/img/loading.gif" lazyload></p>
+<p>当采样率分别是频率的2倍时（奈奎斯特速率）： <img src="cydl5.png" srcset="/img/loading.gif" lazyload>
 在正弦波的无数个周期内，都取相同位置的点，故无法正确获得采样（采样信号频率发生混叠，这里可以从频谱图更好的理解，以后会记录到，可以参考有关fft的代码）</p>
-<p>（复刻书上的图：0.95采样率=频率）<br>
-<img src="cydl6.png" srcset="/img/loading.gif" lazyload alt><br>
+<p>（复刻书上的图：0.95采样率=频率） <img src="cydl6.png" srcset="/img/loading.gif" lazyload>
 每个周期只有1或2个点，虽然点呈正弦波的形状，但采样出的信号频率比原来的低。</p>
-<p>参考代码：<br>
-<a target="_blank" rel="noopener" href="https://github.com/SkylarShadow/dsp_guide_for_csbeginner">https://github.com/SkylarShadow/dsp_guide_for_csbeginner</a></p>
+<p>参考代码：
+https://github.com/SkylarShadow/dsp_guide_for_csbeginner</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>

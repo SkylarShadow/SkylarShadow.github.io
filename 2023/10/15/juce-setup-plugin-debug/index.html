@@ -16,12 +16,12 @@
   <meta name="author" content="SKYlarS">
   <meta name="keywords" content="">
   
-    <meta name="description" content="如何用juce内置的调试器调试插件？   找到juce目录下的 extras&#x2F;AudioPluginHost&#x2F;Projucer.jucer，用Projucer打开，再用ide打开    用ide打开后并运行，出现juce自带的插件调试环境    若要调试插件，（在windows中）选菜单的Options-&gt;edit the list of available plugins…（或者直接按c">
+    <meta name="description" content="如何用juce内置的调试器调试插件？  找到juce目录下的 extras&#x2F;AudioPluginHost&#x2F;Projucer.jucer，用Projucer打开，再用ide打开  用ide打开后并运行，出现juce自带的插件调试环境  若要调试插件，（在windows中）选菜单的Options-&gt;edit the list of available plugins...（或者直接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何用juce内置的调试器调试插件？">
 <meta property="og:url" content="https://skylarshadow.github.io/2023/10/15/juce-setup-plugin-debug/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
-<meta property="og:description" content="如何用juce内置的调试器调试插件？   找到juce目录下的 extras&#x2F;AudioPluginHost&#x2F;Projucer.jucer，用Projucer打开，再用ide打开    用ide打开后并运行，出现juce自带的插件调试环境    若要调试插件，（在windows中）选菜单的Options-&gt;edit the list of available plugins…（或者直接按c">
+<meta property="og:description" content="如何用juce内置的调试器调试插件？  找到juce目录下的 extras&#x2F;AudioPluginHost&#x2F;Projucer.jucer，用Projucer打开，再用ide打开  用ide打开后并运行，出现juce自带的插件调试环境  若要调试插件，（在windows中）选菜单的Options-&gt;edit the list of available plugins...（或者直接">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/10/15/juce-setup-plugin-debug/juce-setup-plugin-debug1.png">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/10/15/juce-setup-plugin-debug/juce-setup-plugin-debug2.png">
@@ -231,7 +231,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          279 字
+          281 字
         
       </span>
     
@@ -284,25 +284,16 @@
             
               <div class="markdown-body">
                 
-                <h1 id="如何用juce内置的调试器调试插件"><a class="markdownIt-Anchor" href="#如何用juce内置的调试器调试插件"></a> 如何用juce内置的调试器调试插件？</h1>
-<ol>
-<li>
-<p>找到juce目录下的 extras/AudioPluginHost/Projucer.jucer，用Projucer打开，再用ide打开<br>
-<img src="juce-setup-plugin-debug1.png" srcset="/img/loading.gif" lazyload alt></p>
-</li>
-<li>
-<p>用ide打开后并运行，出现juce自带的插件调试环境<br>
-<img src="juce-setup-plugin-debug2.png" srcset="/img/loading.gif" lazyload alt></p>
-</li>
-<li>
-<p>若要调试插件，（在windows中）选菜单的Options-&gt;edit the list of available plugins…（或者直接按ctrl+p），按options-&gt;scan vst3,选好vst3存在的路径再扫描就可以了<br>
-<img src="juce-setup-plugin-debug3.png" srcset="/img/loading.gif" lazyload alt><br>
-<img src="juce-setup-plugin-debug4.png" srcset="/img/loading.gif" lazyload alt></p>
-</li>
-<li>
-<p>最后在调试器主界面看看效果：对主界面按鼠标右键 选择想添加的插件（我这里添加了个real guitar）<br>
-<img src="juce-setup-plugin-debug5.png" srcset="/img/loading.gif" lazyload alt></p>
-</li>
+                <h1 id="如何用juce内置的调试器调试插件">如何用juce内置的调试器调试插件？</h1>
+<ol type="1">
+<li><p>找到juce目录下的
+extras/AudioPluginHost/Projucer.jucer，用Projucer打开，再用ide打开 <img src="juce-setup-plugin-debug1.png" srcset="/img/loading.gif" lazyload></p></li>
+<li><p>用ide打开后并运行，出现juce自带的插件调试环境 <img src="juce-setup-plugin-debug2.png" srcset="/img/loading.gif" lazyload></p></li>
+<li><p>若要调试插件，（在windows中）选菜单的Options-&gt;edit the list of
+available plugins...（或者直接按ctrl+p），按options-&gt;scan
+vst3,选好vst3存在的路径再扫描就可以了 <img src="juce-setup-plugin-debug3.png" srcset="/img/loading.gif" lazyload> <img src="juce-setup-plugin-debug4.png" srcset="/img/loading.gif" lazyload></p></li>
+<li><p>最后在调试器主界面看看效果：对主界面按鼠标右键
+选择想添加的插件（我这里添加了个real guitar） <img src="juce-setup-plugin-debug5.png" srcset="/img/loading.gif" lazyload></p></li>
 </ol>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 

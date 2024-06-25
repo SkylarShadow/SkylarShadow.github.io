@@ -23,16 +23,17 @@
 <meta property="og:site_name" content="skylars&#39;s domain">
 <meta property="og:description" content="（不知道为什么有高温假放，第一次感觉这个世界有一分美好。じあ,就随便写点吧） 读本文可能需要一点信号与系统的基础和编程基础。 滤波在计算机中如何实现？ 省流版： 1234567891011double cutoff_Freq&#x3D;432; &#x2F;&#x2F;截止频率double sampleRate&#x3D;44100.0; &#x2F;&#x2F;采样率double a&#x3D;cutoff_Freq&#x2F;sampleRate; &#x2F;&#x2F;滤波系数fo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/1.png">
+<meta property="og:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/1.png">
+<meta property="og:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/2.png">
 <meta property="article:published_time" content="2024-06-24T08:09:18.000Z">
-<meta property="article:modified_time" content="2024-06-25T03:10:23.148Z">
+<meta property="article:modified_time" content="2024-06-25T03:27:04.784Z">
 <meta property="article:author" content="SKYlarS">
 <meta property="article:tag" content="dsp">
 <meta property="article:tag" content="数字信号处理">
 <meta property="article:tag" content="音频">
 <meta property="article:tag" content="滤波">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/1.png">
+<meta name="twitter:image" content="https://skylarshadow.github.io/2024/06/24/%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86%E4%B8%8E%E9%9F%B3%E9%A2%91%E2%80%94%E2%80%94%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%8E%9F%E7%90%86/1.png">
   
   
   
@@ -229,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          283 字
+          2.5k 字
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
         
-          3 分钟
+          22 分钟
         
       </span>
     
@@ -285,22 +286,18 @@
                 <p>（不知道为什么有高温假放，第一次感觉这个世界有一分美好。じあ,就随便写点吧）
 读本文可能需要一点信号与系统的基础和编程基础。</p>
 <h2 id="滤波在计算机中如何实现">滤波在计算机中如何实现？</h2>
-<p>省流版： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> cutoff_Freq=<span class="hljs-number">432</span>; <span class="hljs-comment">//截止频率</span><br><br><span class="hljs-type">double</span> sampleRate=<span class="hljs-number">44100.0</span>; <span class="hljs-comment">//采样率</span><br><br><span class="hljs-type">double</span> a=cutoff_Freq/sampleRate; <span class="hljs-comment">//滤波系数</span><br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;samples.<span class="hljs-built_in">length</span>();i++)&#123;<br><br>    samples[i]=a*samples[i]+(<span class="hljs-number">1.0</span>-a)*samples[i<span class="hljs-number">-1</span>];<br><br>&#125;<br></code></pre></td></tr></table></figure> 公式为： <!--<span class="katex-error" title="ParseError: KaTeX parse error: Can&#x27;t use function &#x27;$&#x27; in math mode at position 5: --&gt;
-$̲$ x[i]=ax[i]+(1…" style="color:#cc0000">--&gt;
-$$ x[i]=ax[i]+(1-a)x[i-1] $$
-&lt;!--</span>--&gt;
-这个公式怎么来的，a又是什么，下文会提到。</p>
+<p>省流版： <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">double</span> cutoff_Freq=<span class="hljs-number">432</span>; <span class="hljs-comment">//截止频率</span><br><br><span class="hljs-type">double</span> sampleRate=<span class="hljs-number">44100.0</span>; <span class="hljs-comment">//采样率</span><br><br><span class="hljs-type">double</span> a=cutoff_Freq/sampleRate; <span class="hljs-comment">//滤波系数</span><br><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;samples.<span class="hljs-built_in">length</span>();i++)&#123;<br><br>    samples[i]=a*samples[i]+(<span class="hljs-number">1.0</span>-a)*samples[i<span class="hljs-number">-1</span>];<br><br>&#125;<br></code></pre></td></tr></table></figure> 公式为：<span class="math display">\[
+x[i]=ax[i]+(1-a)x[i-1] \]</span></p>
+<p>这个公式怎么来的，a又是什么，下文会提到。</p>
 <h2 id="为什么不直接在频域做处理">为什么不直接在频域做处理？</h2>
 <p>首先：傅里叶变换
-的运算量极大，且涉及大量三角函数和浮点运算，经过ft（傅里叶变换）和ift（逆傅里叶变换）过程，耗时非常高；而且频谱是根据时间不断变化的，所以要用<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9F%AD%E6%99%82%E8%B7%9D%E5%82%85%E7%AB%8B%E8%91%89%E8%AE%8A%E6%8F%9B">stft</a>等进行分帧，再进行变换，而每次分帧加窗都会有误差产生，误差累积起来就会对音质有影响。</p>
+的运算量极大，且涉及大量三角函数和浮点运算，经过ft（傅里叶变换）和ift（逆傅里叶变换）过程，耗时非常高；而且频谱是根据时间不断变化的，所以要用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9F%AD%E6%99%82%E8%B7%9D%E5%82%85%E7%AB%8B%E8%91%89%E8%AE%8A%E6%8F%9B">stft</a>等进行分帧，再进行变换，而每次分帧加窗都会有误差产生，误差累积起来就会对音质有影响。</p>
 <h2 id="如何从时域去进行操作">如何从时域去进行操作？</h2>
 <h3 id="模拟电路">模拟电路？</h3>
 <p>我们从RC电路开始说起： 打开电路仿真网站：
 http://lushprojects.com/circuitjs/circuitjs.html 选择RC电路：</p>
-<p><img src="./数字信号处理与音频——滤波器原理/1.png" srcset="/img/loading.gif" lazyload /></p>
-<p>然后右键下方的波形图，选择properties（属性）： <img
-src="./数字信号处理与音频——滤波器原理/2.png" srcset="/img/loading.gif" lazyload /> 勾上show
+<p><img src="1.png" srcset="/img/loading.gif" lazyload></p>
+<p>然后右键下方的波形图，选择properties（属性）： <img src="2.png" srcset="/img/loading.gif" lazyload> 勾上show
 Spectrum，当然如果有其他想观测的信息也可以勾上；</p>
 <p>现在可以对比一下，去掉电阻后的输出有什么不同（重点关注85.2Hz后的频谱，因为计算得出的截止频率为85.2Hz,这里请先关注现象，截止频率计算什么的将在后面提到）</p>
 <p>这个电路就是RC滤波电路，电感以磁能存储电能，在电流变化时产生反向电压，阻止电流突变；电容存储电荷，当电压变化时电荷会流出或流入，减缓电压变化。这两种对交流电的阻碍都叫做阻抗。</p>
@@ -312,55 +309,41 @@ RC \frac{dv_c(t)}{dt} = v_{in}(t) - v_c(t) \]</span>
 (这里的公式大概能懂吧，有点像电路中电流的等式，可以结合高中学过的公式：
 $C = <span class="math inline">\(,\)</span> I = =
 $，也可结合信号与系统——奥本海姆书P153来看)</p>
-<p>令输入电压$ V_{in} =e^{jwt} <span
-class="math inline">\(，输出电压一定为：\)</span> V_{in} =H(jw)e^{jwt}
-<span class="math inline">\(。 其中\)</span> H(jw) <span
-class="math inline">\(是 __频率响应__ ，即\)</span> H(jw) = $<br />
+<p>令输入电压$ V_{in} =e^{jwt} <span class="math inline">\(，输出电压一定为：\)</span> V_{in} =H(jw)e^{jwt}
+<span class="math inline">\(。 其中\)</span> H(jw) <span class="math inline">\(是 __频率响应__ ，即\)</span> H(jw) = $<br>
 (为什么有一个$ e^{jwt} <span class="math inline">\(？因为对\)</span>
-e^{jwt} <span
-class="math inline">\(进行求导，求导后的表达式仍有\)</span> e^{jwt}
+e^{jwt} <span class="math inline">\(进行求导，求导后的表达式仍有\)</span> e^{jwt}
 $，利用复指数的性质能简化运算和方便研究系统特性)</p>
 <p>得： $ RC H(jw)e^{jwt} = e^{jwt} - H(jw)e^{jwt} $</p>
 <p>可直接得出： $ H(jw)e^{jwt} = e^{jwt} $</p>
 <p>其中上文提到的截止频率$ w_c = $</p>
 <p>对频率响应取模：$ |H(jw)| = || = $ ((实部平方+虚部平方)并开根号)</p>
-<p>所以当信号的频率<span
-class="math inline">\(w&gt;w_c\)</span>，则信号衰减；</p>
+<p>所以当信号的频率<span class="math inline">\(w&gt;w_c\)</span>，则信号衰减；</p>
 <p>当将$ H(jw) <span class="math inline">\(推广到拉普拉斯域，即\)</span>
 s=+ jw <span class="math inline">\(,得:\)</span>$ H(s) = $$ 此时$ H(s)
 $就叫做 <strong>传递函数</strong> .</p>
 <h3 id="数字滤波">数字滤波</h3>
-<p>计算机处理的数据是离散的，音频也是离散化的。所以我们要利用z变换将传递函数离散化，利用一阶前向差分法：<span
-class="math display">\[ s=\frac{z-1}{T} \]</span></p>
+<p>计算机处理的数据是离散的，音频也是离散化的。所以我们要利用z变换将传递函数离散化，利用一阶前向差分法：<span class="math display">\[ s=\frac{z-1}{T} \]</span></p>
 <p>另外先推导一下这个一阶前向差分法的公式吧。
-首先根据拉普拉斯变换的时域微分性质，有 $ sX(s) <span
-class="math inline">\(（网上有很多写的是\)</span> sX(s)-f(0)
+首先根据拉普拉斯变换的时域微分性质，有 $ sX(s) <span class="math inline">\(（网上有很多写的是\)</span> sX(s)-f(0)
 $，不过计算机中的音频数据一般是因果信号，所以f(0) =
 0）,我们利用差分来近似微分： <span class="math display">\[
-\frac{dx(t)}{dt}=y[n] ≈ \frac{x[n+1]-x[n]}{T_s} \]</span> 其中<span
-class="math inline">\(T_s\)</span>是采样时间，即两个采样点之间时间间隔（对于连续系统，采样时间间隔为0）；故在T足够小时，将上式由时域变换到z域，并且按照
+\frac{dx(t)}{dt}=y[n] ≈ \frac{x[n+1]-x[n]}{T_s} \]</span> 其中<span class="math inline">\(T_s\)</span>是采样时间，即两个采样点之间时间间隔（对于连续系统，采样时间间隔为0）；故在T足够小时，将上式由时域变换到z域，并且按照
 <strong>Z变换的时移性质</strong> ：<span class="math inline">\(x[n-n0]
-\leftrightarrow z^{-n_0}X(z)\)</span>，其中<span
-class="math inline">\(n_0\)</span>=-1,即<span
-class="math inline">\(x[i+1] \leftrightarrow z^{1}X(z)\)</span>,得：
+\leftrightarrow z^{-n_0}X(z)\)</span>，其中<span class="math inline">\(n_0\)</span>=-1,即<span class="math inline">\(x[i+1] \leftrightarrow z^{1}X(z)\)</span>,得：
 <span class="math display">\[ Y[z] = \frac{zX[z]-X[z]}{T_s} \]</span>
 即<span class="math display">\[ Y[z] = \frac{(z-1)X[z]}{T_s} \]</span>
 传递函数就是： <span class="math display">\[ H(z) = \frac{(z-1)}{T_s}
 \]</span> 为了近似微分，用s替换H(z): <span class="math display">\[ s =
 \frac{(z-1)}{T_s} \]</span> 即可得出公式。
-如果还不明白可以看下面的推导：根据公式将s域离散化：<span
-class="math inline">\(z =
-e^{sT_s}\)</span>（这里类似于时域采样，只是是在复平面按采样时间间隔<span
-class="math inline">\(T_s\)</span>进行采样），当<span
-class="math inline">\(sT_s\)</span>很小时，根据泰勒展开式（或者等价无穷小）：$
+如果还不明白可以看下面的推导：根据公式将s域离散化：<span class="math inline">\(z =
+e^{sT_s}\)</span>（这里类似于时域采样，只是是在复平面按采样时间间隔<span class="math inline">\(T_s\)</span>进行采样），当<span class="math inline">\(sT_s\)</span>很小时，根据泰勒展开式（或者等价无穷小）：$
 e^{sT_s} ≈ 1 + sT_s<span class="math inline">\(,得\)</span> z ≈ 1 + sT_s
 $,整理上式，得 <span class="math display">\[ s = \frac{(z-1)}{T_s}
 \]</span></p>
-<p>说了这么多，回到正题，将上式代入到传递函数：$ H(s) = $，得 <span
-class="math display">\[ H(z) = \frac{Y[z]}{X[z]} =  \frac{1}{1+
+<p>说了这么多，回到正题，将上式代入到传递函数：$ H(s) = $，得 <span class="math display">\[ H(z) = \frac{Y[z]}{X[z]} =  \frac{1}{1+
 \frac{z-1}{Tw_c}} \]</span>
-为了照顾数学和我一样不太好的同学，我多写两步，将上式整理： <span
-class="math display">\[ Y[z] +\frac{Y[z]z-Y[z]}{Tw_c} = X[z] \]</span>
+为了照顾数学和我一样不太好的同学，我多写两步，将上式整理： <span class="math display">\[ Y[z] +\frac{Y[z]z-Y[z]}{Tw_c} = X[z] \]</span>
 根据上文提到过的 <strong>Z变换的时移性质</strong>，并从z域变换到时域：
 <span class="math display">\[ y[n] +\frac{y[n+1]-y[n]}{Tw_c} = x[n]
 \]</span> 令$ Tw_c = a $，此时a就是滤波系数，得</p>
@@ -368,7 +351,7 @@ class="math display">\[ Y[z] +\frac{Y[z]z-Y[z]}{Tw_c} = X[z] \]</span>
 <span class="math display">\[ y[n+1] =ax[n] + (1-a)y[n]  \]</span>
 公式基本推导完成。（和刚开始的滤波公式差不多对吧（不过说起来，刚开始提到的滤波公式应该采用的是后向差分进行离散化，读者可以自行证明一下，方法差不多的），另外实践中离散化一般不采用这种方法，还有一些方法如双线性变换法等）</p>
 <p>下次将会用C++与Juce实现这个滤波器（官方示例好像也有，可以去翻翻Juce的示例）</p>
---></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>
             

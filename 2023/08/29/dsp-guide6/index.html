@@ -16,12 +16,12 @@
   <meta name="author" content="SKYlarS">
   <meta name="keywords" content="">
   
-    <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识； 本文是笔记而不是教程，所以仅供参考； 傅里叶变换的性质  齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对 可加性：直角坐标系中频谱相加,即实部与实部相加，虚部与虚部">
+    <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识； 本文是笔记而不是教程，所以仅供参考； 傅里叶变换的性质  齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对 可加性：直角坐标系中频谱相加,即实部与实部相">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用数字信号处理——笔记与基于C++与python的实验(6)">
 <meta property="og:url" content="https://skylarshadow.github.io/2023/08/29/dsp-guide6/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
-<meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识； 本文是笔记而不是教程，所以仅供参考； 傅里叶变换的性质  齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对 可加性：直角坐标系中频谱相加,即实部与实部相加，虚部与虚部">
+<meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识； 本文是笔记而不是教程，所以仅供参考； 傅里叶变换的性质  齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对 可加性：直角坐标系中频谱相加,即实部与实部相">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/08/29/dsp-guide6/properties.png">
 <meta property="article:published_time" content="2023-08-29T11:16:33.000Z">
@@ -280,21 +280,23 @@
             
               <div class="markdown-body">
                 
-                <p>参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith<br>
+                <p>参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith
 本笔记的内容倾向于计算机专业的程序设计，便于学习（复习）C++、python等知识；<br>
 本文是笔记而不是教程，所以仅供参考；</p>
 <h2 id="傅里叶变换的性质">傅里叶变换的性质</h2>
-<ol>
-<li>齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[ ] 和 kX[]也是傅里叶变换对</li>
-<li>可加性：直角坐标系中频谱相加,即实部与实部相加，虚部与虚部相加。如果 x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2 [f]=lmy[f]</li>
+<ol type="1">
+<li>齐次性：如果 x[] 和 X[] 是一 个傅里叶变换对，那么对于任意常数 k, kx[
+] 和 kX[]也是傅里叶变换对</li>
+<li>可加性：直角坐标系中频谱相加,即实部与实部相加，虚部与虚部相加。如果
+x1[n] +x2[n]=y[n]，那么 ReX1[f] + ReX2[f]=Rey[f]，且 ImX1[f]+lmX2
+[f]=lmy[f]</li>
 </ol>
 <h2 id="验证可加性和齐次性">验证可加性和齐次性</h2>
 <p>(齐次性略过，有必要的话以后补上)</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br>x1 = <span class="hljs-built_in">create_sin_arr</span>(<span class="hljs-number">1</span>,<span class="hljs-number">220</span>, <span class="hljs-number">0</span>,<span class="hljs-number">22050</span>,<span class="hljs-number">1000</span>);<br>x2 = <span class="hljs-built_in">create_sin_arr</span>(<span class="hljs-number">1</span>,<span class="hljs-number">330</span>, <span class="hljs-number">0</span>,<span class="hljs-number">22050</span>,<span class="hljs-number">1000</span>);<br>x3 = x1 + x2;<br><span class="hljs-built_in">vector_show</span>(x3);<br><span class="hljs-built_in">vector_complex_real_show</span>(<span class="hljs-built_in">IDFT</span>(<span class="hljs-built_in">DFT</span>(<span class="hljs-built_in">real_to_complex</span>(x1) + <span class="hljs-built_in">real_to_complex</span>(x2),<span class="hljs-number">4410</span>),<span class="hljs-number">4410</span>));<br><br></code></pre></td></tr></table></figure>
 <p>第一组数据，将x1和x2数据直接相加；第二组数据，将x1和x2分别做dft再相加，然后再做idft(为了方便计算，第二组数据只取了1/5)</p>
-<p>将计算后的结果用python绘图</p>
-<!-- ![](/image/properties.png) -->
-<p><img src="properties.png" srcset="/img/loading.gif" lazyload alt></p>
+<p>将计算后的结果用python绘图 <!-- ![](/image/properties.png) --></p>
+<p><img src="properties.png" srcset="/img/loading.gif" lazyload></p>
 <p>发现两组数据形成的曲线重叠在一起，说明数据相同，故得证。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 

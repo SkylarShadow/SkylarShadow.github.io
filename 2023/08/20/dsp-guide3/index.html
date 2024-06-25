@@ -16,12 +16,12 @@
   <meta name="author" content="SKYlarS">
   <meta name="keywords" content="">
   
-    <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是教程，所以仅供参考； 3.1.卷积 卷积的作用：将两个函数（或信号）之间的信息进行合成或变换，特别是用于滤波和傅里叶变换 公式: $ z(t)&#x3D;x(t)*y(t)&#x3D; ∫x(m)y(t-m)dm $">
+    <meta name="description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是教程，所以仅供参考； 3.1.卷积 卷积的作用：将两个函数（或信号）之间的信息进行合成或变换，特别是用于滤波和傅里叶变换 公式: $ z(t)&#x3D;x(t)*y(t)&#x3D; ∫x(m)y(t-m)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实用数字信号处理——笔记与基于C++与python的实验(3)">
 <meta property="og:url" content="https://skylarshadow.github.io/2023/08/20/dsp-guide3/index.html">
 <meta property="og:site_name" content="skylars&#39;s domain">
-<meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是教程，所以仅供参考； 3.1.卷积 卷积的作用：将两个函数（或信号）之间的信息进行合成或变换，特别是用于滤波和傅里叶变换 公式: $ z(t)&#x3D;x(t)*y(t)&#x3D; ∫x(m)y(t-m)dm $">
+<meta property="og:description" content="参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识； 本文是笔记而不是教程，所以仅供参考； 3.1.卷积 卷积的作用：将两个函数（或信号）之间的信息进行合成或变换，特别是用于滤波和傅里叶变换 公式: $ z(t)&#x3D;x(t)*y(t)&#x3D; ∫x(m)y(t-m)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/08/20/dsp-guide3/conv1.png">
 <meta property="og:image" content="https://skylarshadow.github.io/2023/08/20/dsp-guide3/conv2.png">
@@ -282,19 +282,18 @@
             
               <div class="markdown-body">
                 
-                <p>参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith<br>
+                <p>参考书：《实用数字信号处理：从原理到应用》 Steven W. Smith
 本笔记的内容倾向于计算机专业，电路相关的内容会较少而程序方面的会比较多，且能够便于学习（复习）C++的知识；<br>
 本文是笔记而不是教程，所以仅供参考；</p>
-<h2 id="3-1-卷积">3.1.卷积</h2>
+<h2 id="卷积">3.1.卷积</h2>
 <p>卷积的作用：将两个函数（或信号）之间的信息进行合成或变换，特别是用于滤波和傅里叶变换</p>
 <p>公式: $ z(t)=x(t)*y(t)= ∫x(m)y(t-m)dm $</p>
 <p>卷积的本质：加权和.</p>
-<p>卷积的角度：<br>
-输入端：分析输入信号的一个样点是如何对输出端的多个样点产生贡献的<br>
+<p>卷积的角度：
+输入端：分析输入信号的一个样点是如何对输出端的多个样点产生贡献的
 输出端：分析输出信号的一个样点是如何接收到输人信号多个样点的信息</p>
-<p><img src="conv1.png" srcset="/img/loading.gif" lazyload alt></p>
-<p>模拟下图：<br>
-<img src="conv2.png" srcset="/img/loading.gif" lazyload alt></p>
+<p><img src="conv1.png" srcset="/img/loading.gif" lazyload></p>
+<p>模拟下图： <img src="conv2.png" srcset="/img/loading.gif" lazyload></p>
 <p>代码:</p>
 <pre><code class="hljs">vector&lt;double&gt; X=&#123;0, -1, -1.3, 2, 1.4, 1.4, 0.6, 0, -0.6&#125;;
 vector&lt;double&gt; H=&#123;1, -0.5, -0.3, -0.2&#125;;
@@ -318,10 +317,8 @@ for(int i = 0; i &lt; Y.size(); i++)&#123;
     &#125;
 &#125;
 return Y;
-&#125;
-</code></pre>
-<p>结果：<br>
-<img src="conv3.png" srcset="/img/loading.gif" lazyload alt><br>
+&#125;</code></pre>
+<p>结果： <img src="conv3.png" srcset="/img/loading.gif" lazyload>
 因为输入数值是肉眼观察的，所以部分数值有出入，但是数值的“位置和趋势”表明了程序是没有问题的;且输出端角度来看也同理。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
